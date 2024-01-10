@@ -1,0 +1,73 @@
+/* Quando é titulo usa ponto no início (.) quando é parte do corpo do código nãu usa */
+
+* {
+    box-sizing: border-box;
+    /*tranforma tudo em um box, ou bloco */
+    font-family: 'Open Sans', sans-serif;
+    /*fonte do google fonts */
+}
+
+body {
+    background-color: #000;
+    color: white;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {    
+    text-decoration: underline;
+}
+
+.main {
+    margin: .5rem;
+    padding: .5rem;
+    /*Espaçamento do bloco */
+    border: 1.5px solid #fff;
+    border-radius: 1rem
+}
+
+.main::before,
+.main::after {
+    content: "";
+    background-image: url(/assets/img/background.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 140vw;
+    /* vw unidade de medida que significa 100% dop tamanho da tela visivel*/
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main::after {
+    content: "";
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 768px) {
+    .main {
+        max-width: 1024px;
+        margin: 1rem auto;
+    }
+
+    .main::before {
+        width: 70vw;
+    }
+
+    .main::after {
+        width: 70vw;
+    }
+
+
+
+}
